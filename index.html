@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Модальное окно</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style type="text/css">
+        #main_container {
+            padding-top: 60px;
+        }
+
+        #url, #open {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="myModalLabel">Заголовок окна</h3>
+            </div>
+            <div class="modal-body">
+                <p>Здесь будет основное содержимое окна</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть окно</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center" id="main_container">
+    <div class="row">
+        <div class="col-md-9">
+            <input type="text" id="url" class="form-control">
+        </div>
+        <div class="col-md-3">
+            <button id="open" class="btn btn-default" data-toggle="modal" data-target="#myModal" href="http://google.com">Открыть окно</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#open").click(function(){
+        $("#myModal .modal-body").load("remote_content.html");
+    });
+</script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>
